@@ -106,11 +106,12 @@ class ChooseCategoryScreen extends StatelessWidget {
             const Row(
               children: [
                 Text(
-                  "Welcome back, Jane",
+                  "Welcome back, Janey",
                   style: TextStyle(
                       fontSize: 25,
                       fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      fontFamily:'Bubblegum'),
                 ),
                 Spacer(), // Add a spacer to push the avatar to the right
                 CircleAvatar(
@@ -120,9 +121,9 @@ class ChooseCategoryScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height:12),
-            
-             TextField(
+            SizedBox(height: 12),
+
+            TextField(
               decoration: InputDecoration(
                 hintText: 'Search subjects',
                 prefixIcon: const Icon(Icons.search),
@@ -134,16 +135,22 @@ class ChooseCategoryScreen extends StatelessWidget {
                 fillColor: Colors.grey.shade200,
               ),
             ),
-             const SizedBox(height: 5),
+            const SizedBox(height: 5),
             // Explore by Categories
+            
+            Container(
+              height: 150,
+              child: VideoPlayerScreen(),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
                   'Explore all your favourite subjects',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    fontFamily:'Bubblegum'
                   ),
                 ),
                 TextButton(
@@ -152,23 +159,26 @@ class ChooseCategoryScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height:5),
-            Container(
-              height: 150,
-              child: VideoPlayerScreen(),
-            ),
-            const SizedBox(height: 20),
+            
+            const SizedBox(height: 5),
             Expanded(
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 3 / 2,
+                  childAspectRatio: 4 / 4,
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                 ),
                 itemCount: categories.length,
                 itemBuilder: (context, index) {
-                  return CategoryCard(category: categories[index]);
+                  return GestureDetector(
+                    onTap: () {
+                      // Add your logic here for when the card is tapped
+                    },
+                    child: CategoryCard(
+                      category: categories[index],
+                    ),
+                  );
                 },
               ),
             ),
@@ -191,11 +201,11 @@ class ChooseCategoryScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items:const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.book),label: "Course"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings),label:"Settings"),
-
+      bottomNavigationBar:
+          BottomNavigationBar(items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.book), label: "Course"),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
       ]),
     );
   }
@@ -214,7 +224,7 @@ class CategoryCard extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Color.fromARGB(255, 5, 119, 14),
           borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
@@ -258,6 +268,5 @@ class CategoryCard extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }
