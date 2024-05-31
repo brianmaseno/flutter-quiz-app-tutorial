@@ -187,7 +187,7 @@ class ChooseCategoryScreen extends StatelessWidget {
                 // Handle next button press
               },
               child: const Text(
-                'Next',
+                'Next page ',
                 style: TextStyle(color: Colors.white),
               ),
               style: ElevatedButton.styleFrom(
