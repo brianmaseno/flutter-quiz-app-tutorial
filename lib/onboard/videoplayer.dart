@@ -16,7 +16,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> with SingleTicker
   @override
   void initState() {
     super.initState();
-    _videoPlayerController = VideoPlayerController.asset('assets/video1.mp4');
+    _videoPlayerController = VideoPlayerController.asset('assets/video2.mp4');
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController,
       aspectRatio: 16 / 9,
