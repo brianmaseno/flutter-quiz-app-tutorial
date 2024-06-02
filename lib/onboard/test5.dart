@@ -201,12 +201,36 @@ class ChooseCategoryScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.book), label: "Course"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+  items: const <BottomNavigationBarItem>[
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: "Home",
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.book),
+      label: "Courses",
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.settings),
+      label: "Settings",
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.person_2_rounded),
+      label: "Profile",
+    ),
+  ],
+  selectedItemColor: Colors.blue,
+  unselectedItemColor: Colors.grey,
+  backgroundColor: Colors.white,
+  elevation: 5,
+  selectedFontSize: 14,
+  unselectedFontSize: 12,
+  showSelectedLabels: true,
+  showUnselectedLabels: true,
+  type: BottomNavigationBarType.fixed,
+),
+
     );
   }
 }

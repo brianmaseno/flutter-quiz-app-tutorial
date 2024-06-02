@@ -28,6 +28,7 @@ class MainApp extends StatelessWidget {
       // theme: ThemeData.dark().copyWith(),
 
       home: ChooseCategoryScreen(),
+      
       // home: const QuizScreen(),
     );
   }
